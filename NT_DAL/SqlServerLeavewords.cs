@@ -25,8 +25,9 @@ namespace NT_DAL
         //删除留言
         public int Deleteliuyan(int Leavewords_ID)
         {
+            string sql = "delete from Leavewords where Leavewords_ID=@Leavewords_ID";
             SqlParameter[] sp = { new SqlParameter("@Leavewords_ID", Leavewords_ID) };
-            return DBHelper.GetExcuteNonQuery("DeleteComments", System.Data.CommandType.StoredProcedure, sp);
+            return DBHelper.GetExcuteNonQuery(sql, sp);
         }
         //展现留言
 

@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="NT_Web.Web" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+         <div class=" ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class=" " href="Index.aspx"><i class="fa fa-sun-o"></i>国家宝藏</a></div>
+      <div class=" ">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="">主页</a></li>
+          <li><a href="">Acg</a></li>
+          <li><a href="Cull.aspx">文物宝鉴</a></li>
+          <li><a href="News.aspx">前世今生</a></li>
+          <li><a href="User_Index.aspx">个人中心</a></li>
+</ul>
+         
+      </div>
+      </div>
+      <div style="float: right; padding-right: 49px; margin-top: -56px; color: wheat;">
+          <asp:Panel ID="PanelUserInfo" runat="server">
+              欢迎您，<a href="../UserCenter/UserIndex.aspx"><asp:Label ID="lblUserInfo" runat="server" Text=""></asp:Label></a>丨
+                    <asp:LinkButton ID="lbtnLoginOut" runat="server" OnClick="lbtnLoginOut_Click">注销</asp:LinkButton>
+          </asp:Panel>
+          <asp:Panel ID="PanelLogin" runat="server">
+              <div class="login">
+                  
+                  <a href="login.aspx">登录</a>丨
+                <a href="Register.aspx">注册</a>
+              </div>
+          </asp:Panel>
+      </div>
+    </form>
+</body>
+</html>

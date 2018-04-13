@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcgRecommendService.cs" />
     <Compile Include="AcgService.cs" />
     <Compile Include="AdminService.cs" />
     <Compile Include="CommentService.cs" />

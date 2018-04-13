@@ -19,6 +19,12 @@ namespace NT_DAL
           
             return DBHelper.GetFillData(sql);
         }
+        //前台展现
+        public DataTable SelectAll()
+        {
+            string sql = "select a.*,b.Cull_Name from  ACG a,Cull b where a.Cull_Name=b.Cull_Name";
+            return DBHelper.GetFillData(sql);
+        }
         //根据作品ID进行删除操作
         public int delete(int Pro_ID)
         {
@@ -41,6 +47,12 @@ namespace NT_DAL
             };
             return DBHelper.GetExcuteNonQuery(sql, sp);
             
+        }
+        //主页展现前几
+        public DataTable SelectTop6()
+        {
+            string sql = "select top 6 * from ACG order by Pro_Time desc";
+            return DBHelper.GetFillData(sql);
         }
     }
 }

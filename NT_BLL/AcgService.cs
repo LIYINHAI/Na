@@ -28,5 +28,15 @@ namespace NT_BLL
         {
             return iacg.addAcg(acg);
         }
+        //后台展现
+        public static DataTable SelectAll()
+        {
+            return iacg.SelectAll();
+        }
+        //展现前几
+        public static DataTable SelectTop6()
+        {
+            return iacg.SelectTop6();
+        }
      }
 }

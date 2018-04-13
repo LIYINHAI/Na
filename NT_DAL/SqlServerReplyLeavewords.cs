@@ -14,8 +14,9 @@ namespace NT_DAL
         //删除
         public int Delete(int ReplyLeavewords_ID)
         {
+            string sql = "delete from ReplyLeavewords where ReplyLeavewords_ID=@ReplyLeavewords_ID";
             SqlParameter[] sp = { new SqlParameter("@ReplyLeavewords_ID", ReplyLeavewords_ID) };
-            return DBHelper.GetExcuteNonQuery("ReplyLeavewords_ID", System.Data.CommandType.StoredProcedure, sp);
+            return DBHelper.GetExcuteNonQuery(sql, sp);
         }
 
         //展现

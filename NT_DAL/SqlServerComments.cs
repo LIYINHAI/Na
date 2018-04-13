@@ -29,8 +29,10 @@ namespace NT_DAL
         //后台删除评论
         public int DeleteComments(int Comments_ID)
         {
-            SqlParameter[] sp = { new SqlParameter("@Comments_ID", Comments_ID) };
-            return DBHelper.GetExcuteNonQuery("DeleteComments", System.Data.CommandType.StoredProcedure, sp);
+            string sql = "delete from Comments where Comments_ID=@Comments_ID";
+            SqlParameter[] sp = { new SqlParameter("@Comments_ID",Comments_ID) };
+            return DBHelper.GetExcuteNonQuery(sql, sp);
+
         }
         //后台展现评论
 

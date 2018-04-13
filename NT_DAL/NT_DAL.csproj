@@ -49,6 +49,7 @@
     <Compile Include="SqlServerCulinfo.cs" />
     <Compile Include="SqlServerLeavewords.cs" />
     <Compile Include="SqlServerNewsinfo.cs" />
+    <Compile Include="SqlServerRecommend.cs" />
     <Compile Include="SqlServerReplyComments.cs" />
     <Compile Include="SqlServerReplyLeavewords.cs" />
     <Compile Include="SqlServerUserInfo.cs" />
