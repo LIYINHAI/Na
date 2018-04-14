@@ -7,6 +7,8 @@ using NT_Models;
 using System.Data;
 using System.Configuration;
 using NT_DAL;
+using System.Data.SqlClient;
+
 namespace NT_BLL
 {
    public class LeavewordsService
@@ -31,6 +33,16 @@ namespace NT_BLL
         public static DataTable SelectAllliuyan()
         {
             return ileavewords.SelectAllliuyan();
+        }
+        //根据ID展现
+        public static DataTable SelectLeavewords(int News_ID)
+        {
+            return ileavewords.SelectLeavewords(News_ID);
+        }
+        //增加留言
+        public static int InsertLeavewords(Leavewords words)
+        {
+            return ileavewords.InsertLeavewords(words);
         }
     }
 }

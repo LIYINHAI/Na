@@ -23,5 +23,15 @@ namespace NT_BLL
         {
             return ireplyleavewords.SelectAll();
         }
+        //回复留言
+        public static int InsertReplyLeavewords(ReplyLeavewords Replywords)
+        {
+            return ireplyleavewords.InsertReplyLeavewords(Replywords);
+        }
+        //展现留言
+        public static DataTable SelectReplyLeavewords(int Leavewords_ID)
+        {
+            return ireplyleavewords.SelectReplyLeavewords(Leavewords_ID);
+        }
     }
 }

@@ -36,5 +36,28 @@ namespace NT_DAL
             string sql = "select a.*,b.User_Name,c.News_Title from Leavewords a,UserInfo b,NewsInfo c where a.User_ID=b.User_ID and a.News_ID=c.News_ID";
             return DBHelper.GetFillData(sql);
         }
+        //根据ID展现留言
+        public DataTable SelectLeavewords(int News_ID)
+        {
+            string sql = "select a.*,b.User_Name from Leavewords a,UserInfo b,News c where a.News_ID='" + News_ID + "' and a.News_ID=c.News_ID and a.User_ID=b.User_ID order by Leavewords_Time desc";
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("News_ID",News_ID)
+            };
+            return DBHelper.GetFillData(sql, sp);
+        }
+        //增加留言
+        public int InsertLeavewords(Leavewords words)
+        {
+            string sql = "insert into Leavewords(User_ID,News_ID,Leavewords_Content,Leavewords_Time) values(@UserID,@NewsID,@LeaveContent,@LeaveTime)";
+            SqlParameter[] sp = new SqlParameter[]
+            {
+                new SqlParameter("@UserID",words.User_ID),
+                new SqlParameter("@NewsID",words.News_ID),
+                new SqlParameter("@LeaveContent",words.Leavewords_Content),
+                new SqlParameter("@LeaveTime",words.Leavewords_Time)
+            };
+            return DBHelper.GetExcuteNonQuery(sql, sp);
+        }
     }
 }
